@@ -55,7 +55,20 @@ public class EncrytionProject {
 		System.out.println("* A New Key is Generated! *");
 	}
 
-	private void makeKey() {
+	private void getKey() {
+		
+		System.out.println("Key: ");
+		for (char c : list) {
+			System.out.print(c);
+		}
+		
+		System.out.println();
+
+		for (char c : shuffledList) {
+			System.out.print(c);
+		}
+		
+		System.out.println();
 	}
 
 	private void encrypt() {
@@ -74,7 +87,7 @@ public class EncrytionProject {
 			newKey();
 			break;
 		case 'G':
-			makeKey();
+			getKey();
 			break;
 		case 'E':
 			encrypt();
