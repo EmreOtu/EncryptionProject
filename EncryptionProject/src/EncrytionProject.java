@@ -20,9 +20,23 @@ public class EncrytionProject {
 		list = new ArrayList<Character>();
 		shuffledList = new ArrayList<Character>();
 		character = ' ';
+		
+		newKey();
+		askQuestion();
 	}
 	
-	private void askQuestion() {}
+	private void askQuestion() {
+		while(true) {
+			System.out.println("*************************************************");
+			System.out.println("What do you want to do?");
+			System.out.println("(N)ewKey, (G)etKey, (E)ncrypt, (D)ecrytpt, (Q)uit");
+			
+			char response = Character.toUpperCase(scanner.nextLine().charAt(0));
+			
+			decision(response);
+			
+		}
+	}
 	
 	private void newKey() {}
 	
@@ -33,4 +47,27 @@ public class EncrytionProject {
 	private void decrypt() {}
 	
 	private void quit() {}
+	
+	private void decision(char response) {
+		
+		switch(response) {
+		case 'N':
+			newKey();
+			break;
+		case 'G':
+			makeKey();
+			break;
+		case 'E':
+			encrypt();
+			break;
+		case 'D':
+			decrypt();
+			break;
+		case 'Q':
+			quit();
+			break;
+		default:
+			System.out.println("Not a Valid Answer :(");
+		}
+	}
 }
