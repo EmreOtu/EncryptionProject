@@ -1,23 +1,17 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
-import java.util.Random;
 import java.util.Scanner;
 
 public class EncrytionProject {
 
 	private Scanner scanner;
-	private Random random;
 	private ArrayList<Character> list;
 	private ArrayList<Character> shuffledList;
 	private char character;
-	private String line;
-	private char[] letters;
-	private char[] secretLetters;
+	private String message;
 
 	public EncrytionProject() {
 		scanner = new Scanner(System.in);
-		random = new Random();
 		list = new ArrayList<Character>();
 		shuffledList = new ArrayList<Character>();
 		character = ' ';
@@ -75,7 +69,7 @@ public class EncrytionProject {
 	private void encrypt() {
 
 		System.out.println("Please, Enter the Message: ");
-		String message = scanner.nextLine();
+		message = scanner.nextLine();
 
 		if (message.length() < 1) {
 			System.out.println("Error: Please, Type Your Message!");
@@ -94,7 +88,7 @@ public class EncrytionProject {
 	private void decrypt() {
 
 		System.out.println("Please, Enter the Message: ");
-		String message = scanner.nextLine();
+		message = scanner.nextLine();
 
 		if (message.length() < 1) {
 			System.out.println("Error: Please, Type Your Message!");
@@ -111,6 +105,8 @@ public class EncrytionProject {
 	}
 
 	private void quit() {
+		System.out.println("Shhhhhhh! See You Soon :))");
+		System.exit(0);
 	}
 
 	private void decision(char response) {
