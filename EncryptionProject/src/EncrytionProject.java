@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -72,6 +73,25 @@ public class EncrytionProject {
 	}
 
 	private void encrypt() {
+		
+		System.out.println("Please, Enter the Message: ");
+		String message = scanner.nextLine();
+		
+		letters = message.toCharArray();
+		
+		if (letters.length < 1) {
+			System.out.println("Error: Please, Type Your Message!");
+			encrypt();
+		}
+		
+		System.out.print("Encrypted Message: ");
+		for (int i=0; i < message.length(); i++) {
+			int index = list.indexOf(message.charAt(i));
+			System.out.print(shuffledList.get(index));
+		}
+		
+		System.out.println();
+		
 	}
 
 	private void decrypt() {
