@@ -57,44 +57,57 @@ public class EncrytionProject {
 	}
 
 	private void getKey() {
-		
+
 		System.out.println("Key: ");
 		for (char c : list) {
 			System.out.print(c);
 		}
-		
+
 		System.out.println();
 
 		for (char c : shuffledList) {
 			System.out.print(c);
 		}
-		
+
 		System.out.println();
 	}
 
 	private void encrypt() {
-		
+
 		System.out.println("Please, Enter the Message: ");
 		String message = scanner.nextLine();
-		
-		letters = message.toCharArray();
-		
-		if (letters.length < 1) {
+
+		if (message.length() < 1) {
 			System.out.println("Error: Please, Type Your Message!");
 			encrypt();
+		} else {
+			System.out.print("Encrypted Message: ");
+			for (int i = 0; i < message.length(); i++) {
+				int index = list.indexOf(message.charAt(i));
+				System.out.print(shuffledList.get(index));
+			}
+
+			System.out.println();
 		}
-		
-		System.out.print("Encrypted Message: ");
-		for (int i=0; i < message.length(); i++) {
-			int index = list.indexOf(message.charAt(i));
-			System.out.print(shuffledList.get(index));
-		}
-		
-		System.out.println();
-		
 	}
 
 	private void decrypt() {
+
+		System.out.println("Please, Enter the Message: ");
+		String message = scanner.nextLine();
+
+		if (message.length() < 1) {
+			System.out.println("Error: Please, Type Your Message!");
+			decrypt();
+		} else {
+			System.out.print("Decrypted Message: ");
+			for (int i = 0; i < message.length(); i++) {
+				int index = shuffledList.indexOf(message.charAt(i));
+				System.out.print(list.get(index));
+			}
+
+			System.out.println();
+		}
 	}
 
 	private void quit() {
